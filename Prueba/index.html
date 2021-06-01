@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Proyecto</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.8/ace.js"></script>
+	<!--<script type="text/javascript" src="ace/ace.js"></script>-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+</head>
+
+<body style="background-color: #bfbfbf;">
+	<nav class="navbar fixed-top navbar-light bg-light">
+		<div class="container">
+			<a class="navbar-brand" href="/">OLC2</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Menu
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">New</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Save</a>
+							<a class="dropdown-item" href="#">Save as</a>
+						</div>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+	<div>
+		<div style="background-color: #a6a6a6;" class="jumbotron jumbotron-fluid">
+			<div class="container">
+				<h1 class="display-4">OLC2</h1>
+				<p class="lead">Proyecto</p>
+			</div>
+		</div>
+		<br>
+
+		<div class="row">
+			<div class="col-">
+				<ul class="nav nav-pills mb-3 editor" id="pills-tab" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+							aria-controls="pills-home" aria-selected="true">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+							aria-controls="pills-profile" aria-selected="false">Doc1</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+							aria-controls="pills-contact" aria-selected="false">Doc2</a>
+					</li>
+				</ul>
+				<div class="tab-content" id="pills-tabContent">
+					<div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+					aria-labelledby="pills-home-tab">
+					<!-- CONSOLA DE ENTRADA -->
+					<!-- Input para cargar archivo -->
+						<input type="file"  style="visibility: hidden;"  class="custom-file-input" id="upload" name="upload" required>
+						<button class="btn btn-info h" onclick="analizar()"> Analizar </button>
+						<a class="btn btn-primary hh2" href="" onclick="document.getElementById('upload').click(); return false">Open</a>
+						<div id="Editor" class="editor" style="height: 800px; width: 900px;"></div>
+					</div>
+					<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+						<!-- CONSOLA DE ENTRADA -->
+						<input type="file"  style="visibility: hidden;"  class="custom-file-input" id="upload2" name="upload2" required>
+						<button class="btn btn-info h" onclick="analizar1()"> Analizar </button>
+						<a class="btn btn-primary hh2" href="" onclick="document.getElementById('upload2').click(); return false">Open</a>
+						<div id="Editor1" class="editor" style="height: 800px; width: 900px;"></div>
+					</div>
+					<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+						<!-- CONSOLA DE ENTRADA -->
+						<input type="file"  style="visibility: hidden;"  class="custom-file-input" id="upload3" name="upload3" required>
+						<button class="btn btn-info h" onclick="analizar2()"> Analizar </button>
+						<a class="btn btn-primary hh2" href="" onclick="document.getElementById('upload3').click(); return false">Open</a>
+						<div id="Editor2" class="editor" style="height: 800px; width: 900px;"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-">
+				<ul class="nav nav-pills mb-3 editor" id="pills-tab" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-console" role="tab"
+							aria-controls="pills-home" aria-selected="true">Consola</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-token" role="tab"
+							aria-controls="pills-profile" aria-selected="false">Tokens</a>
+					</li>
+				</ul>
+
+				<div class="tab-content" id="pills-tabContent">
+					<div class="tab-pane fade show active" id="pills-console" role="tabpanel"
+						aria-labelledby="pills-home-tab">
+						<!-- CONSOLA DE JAVASCRIPT -->
+						<br>
+						<h3 class="h">Consola JS:</h3>
+						<a class="btn btn-success h" href="http://localhost:3000/download" >AST</a>
+						<span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Download file .js">
+							<a class="btn btn-dark hh2" href="http://localhost:3000/downloadCod" >Code</a>
+						</span>
+						<div id="Console" class="editor" style="height: 300px; width: 750px;"> </div>
+
+					</div>
+					<div class="tab-pane fade" id="pills-token" role="tabpanel" aria-labelledby="pills-profile-tab">
+						<!-- TOKENS JS -->
+						<br>
+						<h3 class="h">Token JS:</h3>
+						<div id="TokenJS" class="editor" style="height: 300px; width: 750px;"> </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form>
+					<!-- accept="application/txt, .java" 
+						<form enctype="multipart/form-data" method="post" action="http://localhost:8080/upload">  --->
+					<div class="modal-body">
+						<div class="custom-file mb-3">
+							<input type="file"  style="visibility: hidden;"  class="custom-file-input" id="upload" name="upload" required>
+							<a class="btn btn-primary" href="" onclick="document.getElementById('upload').click(); return false">Open</a>
+							<div class="invalid-feedback">Error</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div id="graph" style="text-align: center;">
+	
+
+	<script src="./config.js"></script>
+	<!-- JS, Popper.js, and jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>
+    <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
+	<!-- Footer -->
+	<footer class="page-footer font-small stylish-color-dark pt-4">
+		<!-- Copyright -->
+		<div class="footer-copyright text-center py-3"> ©2021
+			<a href="https://mdbootstrap.com/"></a>
+		</div>
+		<!-- Copyright -->
+	</footer>
+	<!-- Footer -->
+</body>
+
+</html>
