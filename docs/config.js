@@ -50,3 +50,39 @@ consolaTPY.setTheme("ace/theme/terminal");
 consolaTPY.session.setMode("ace/mode/python");
 consolaTPY.setFontSize("20px");
 consolaTPY.setReadOnly(true);
+
+
+// Botones analizar
+function analizar(){
+    const jtxtJSharp = ace.edit("Editor");
+    let entrada = jtxtJSharp.getSession().getValue();
+    setCode(entrada)
+    let dot = `digraph G {
+
+        style=filled;
+        color=lightgrey;
+        node [style=filled,color=white];
+        a0 -> a1;
+    }`; 
+    d3.select('#graph').graphviz().width(window.width - 20).height(600).fit(true).renderDot(dot);
+      
+}
+
+function analizar1(){
+    const jtxtJSharp1 = ace.edit("Editor1");
+    let entrada1 = jtxtJSharp1.getSession().getValue();
+    setCode(entrada1)
+      
+}
+  
+function analizar2(){
+    const jtxtJSharp2 = ace.edit("Editor2");
+    let entrada2 = jtxtJSharp2.getSession().getValue();
+    setCode(entrada2)
+}
+
+
+//Envia el codigo a ser analizado
+async function setCode(texto){
+    console.log(texto)
+}
