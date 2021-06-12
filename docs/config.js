@@ -1,3 +1,5 @@
+var main = require('../Main.js');
+
 // EDITOR
 var editor = ace.edit("Editor");
 editor.setTheme("ace/theme/monokai");
@@ -83,6 +85,7 @@ function analizar2(){
 
 
 //Envia el codigo a ser analizado
-async function setCode(texto){
-    console.log(texto)
+function setCode(texto){
+    var efe = new main();
+    efe.run();
 }

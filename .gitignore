@@ -1,0 +1,7 @@
+node_modules
+src
+grammar/Grammar_xml.jison
+tsconfig.js 
+README.md 
+package-lock.json
+package.json
