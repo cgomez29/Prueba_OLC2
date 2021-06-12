@@ -17,14 +17,14 @@ var editor2 = CodeMirror.fromTextArea(document.getElementById("salida"), {
     matchBrackets: true,
     theme: "monokai"
 });
-
+/*
 
 function analizarXML() {
-    ejecutarCodigo(editor.getValue())
+    //ejecutarCodigo(editor.getValue())
 }
 
 function analizarXPATH() {
-    ejecutarCodigo(editor1.getValue())
+    //ejecutarCodigo(editor1.getValue())
 }
 
 function nuevoXML() {
@@ -87,3 +87,4 @@ function downloadXPATH() {
 
 
 
+*/
